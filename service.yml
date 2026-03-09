@@ -1,0 +1,19 @@
+name: envoy-gateway
+title: Envoy Gateway
+type: infrastructure
+icon: envoy
+scalable: false
+hostname: envoy-gateway
+containers:
+  - name: controller
+  
+helm:
+  name: envoy-gateway
+  source: oci://docker.io/envoyproxy/gateway-helm
+  chart: oci://docker.io/envoyproxy/gateway-helm
+  version: v0.0.0-latest
+  configurations:
+  - name: envoy-gateway
+    annotations: deployment.annotations
+    labels: deployment.pod.labels
+    resources: deployment.envoyGateway.resources
