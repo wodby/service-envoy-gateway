@@ -5,7 +5,7 @@ icon: envoy
 scalable: false
 hostname: envoy-gateway
 containers:
-  - name: controller
+  - name: envoy-gateway
   
 helm:
   name: envoy-gateway
