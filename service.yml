@@ -3,16 +3,25 @@ title: Envoy Gateway
 type: infrastructure
 icon: envoy
 scalable: false
-containers:
-  - name: envoy-gateway
-  
+
 helm:
   name: envoy-gateway
   source: oci://docker.io/envoyproxy/gateway-helm
   chart: oci://docker.io/envoyproxy/gateway-helm
-  version: v0.0.0-latest
-  configurations:
-  - container: envoy-gateway
-    annotations: deployment.annotations
+  version: 1.7.2
+
+workloads:
+- name: main
+  kind: deployment
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: '{{helm.release}}'
+      app.kubernetes.io/name: gateway-helm
+  primary: true
+  helm:
+    annotations: deployment.pod.annotations
     labels: deployment.pod.labels
-    resources: deployment.envoyGateway.resources
+  containers:
+  - name: envoy-gateway
+    helm:
+      resources: deployment.envoyGateway.resources
