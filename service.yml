@@ -8,7 +8,7 @@ helm:
   name: envoy-gateway
   source: oci://docker.io/envoyproxy/gateway-helm
   chart: oci://docker.io/envoyproxy/gateway-helm
-  version: 1.7.2
+  version: v1.8.2
 
 workloads:
 - name: main
