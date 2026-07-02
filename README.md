@@ -1,1 +1,1 @@
-# service-envoy-gateway
+# Envoy Gateway service
