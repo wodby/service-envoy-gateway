@@ -9,6 +9,21 @@ helm:
   source: oci://docker.io/envoyproxy/gateway-helm
   chart: oci://docker.io/envoyproxy/gateway-helm
   version: v1.8.2
+  crdCharts:
+  - name: envoy-gateway-crds
+    source: oci://docker.io/envoyproxy/gateway-crds-helm
+    chart: oci://docker.io/envoyproxy/gateway-crds-helm
+    version: v1.8.2
+    values:
+    - name: crds.gatewayAPI.enabled
+      value: true
+    - name: crds.gatewayAPI.channel
+      value: experimental
+    - name: crds.envoyGateway.enabled
+      value: true
+  values:
+  - name: crds.enabled
+    value: false
 
 workloads:
 - name: main
