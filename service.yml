@@ -13,7 +13,7 @@ helm:
   - name: envoy-gateway-crds
     source: oci://docker.io/envoyproxy/gateway-crds-helm
     chart: oci://docker.io/envoyproxy/gateway-crds-helm
-    version: v1.8.2
+    version: v1.8.3
     values:
     - name: crds.gatewayAPI.enabled
       value: true

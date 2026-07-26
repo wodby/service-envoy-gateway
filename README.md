@@ -22,7 +22,7 @@ configuration for Envoy Gateway.
 | Type | Infrastructure service |
 | Workloads | `main` (Deployment), primary; fixed replica count |
 | Containers | `envoy-gateway` |
-| Helm | chart `oci://docker.io/envoyproxy/gateway-helm`; version `v1.8.2` |
+| Helm | chart `oci://docker.io/envoyproxy/gateway-helm`; version `v1.8.3` |
 
 ## Role in Wodby infrastructure
 
