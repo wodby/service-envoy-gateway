@@ -9,6 +9,8 @@ helm:
   source: oci://docker.io/envoyproxy/gateway-helm
   chart: oci://docker.io/envoyproxy/gateway-helm
   version: v1.8.3
+  valueMappings:
+    replicas: deployment.replicas
   crdCharts:
   - name: envoy-gateway-crds
     source: oci://docker.io/envoyproxy/gateway-crds-helm
