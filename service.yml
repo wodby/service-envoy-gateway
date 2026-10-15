@@ -8,14 +8,14 @@ helm:
   name: envoy-gateway
   source: oci://docker.io/envoyproxy/gateway-helm
   chart: oci://docker.io/envoyproxy/gateway-helm
-  version: v1.9.1
+  version: v1.9.2
   valueMappings:
     replicas: deployment.replicas
   crdCharts:
   - name: envoy-gateway-crds
     source: oci://docker.io/envoyproxy/gateway-crds-helm
     chart: oci://docker.io/envoyproxy/gateway-crds-helm
-    version: v1.9.0
+    version: v1.9.2
     values:
     - name: crds.gatewayAPI.enabled
       value: true
