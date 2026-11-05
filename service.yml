@@ -40,5 +40,11 @@ workloads:
     labels: deployment.pod.labels
   containers:
   - name: envoy-gateway
+    resources:
+      request:
+        cpu: 100
+        memory: 256
+      limit:
+        memory: 1024
     helm:
       resources: deployment.envoyGateway.resources
