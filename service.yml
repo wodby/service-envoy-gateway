@@ -41,9 +41,7 @@ workloads:
   containers:
   - name: envoy-gateway
     resources:
-      request:
-        cpu: 100
-        memory: 256
+      preset: small
       limit:
         memory: 1024
     helm:
